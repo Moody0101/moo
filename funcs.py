@@ -1,9 +1,9 @@
 
-from variables import PYTHON, HTML, doc
+from variables import PYTHON, HTML, documentation
 
 
 def doc():
-    print(doc)
+    print(documentation)
 
 
 def createFile(content, fileName):

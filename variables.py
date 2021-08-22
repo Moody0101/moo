@@ -1,5 +1,6 @@
+v: str = 'moo: 0.0.1'
 
-doc: str = """
+documentation: str = """
     moo package for file manipulation and organization 
     
     version: 0.0.1
@@ -12,18 +13,21 @@ doc: str = """
     file or multiple files.
     
 
-        flags: 
+    flags: 
         --touch ==> create files with one touch.
-
-        --cat ==> checking the content of a file.
-        --delete ==> delete any file in any directory
-
-
-        usage:
+        Example:
+            moo --touch main.py ==> creates a file called main.py
+            but if you want to make more than one file, then use this command
+            moo --touch main.py main.js main.c main.html ==> creates more than one file with the specified names
         
-        moo <flag> fileName or a list of files but this works only in the touch and del
-        command.
-        so, in the cat flag, one file is is the only thing that should be specified
+        --cat ==> checking the content of a file.
+        Example:
+            moo --cat main.py ==> displays the content of the main.py 
+        --delete ==> delete any file in any directory
+        Example:
+            moo --delete main.py ==> deletes the main.py file
+            note ==> (it does not delete dirs)
+            moo --delete main.py main.js ==> deletes every specified file.
 """
 # starter code 
 

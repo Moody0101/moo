@@ -1,7 +1,7 @@
-from sys import argv
+from sys import argv, version
 from os import mkdir,path, remove
 from funcs import doc, createFile, creatHTML, creatPYTHON
-
+from variables import v
 class commands:
     def __init__(self, fileName: str = None, files: list[str] = None) -> None:
         self.fileName = fileName
@@ -17,7 +17,7 @@ class commands:
                 mkdir(dir)
         if self.fileName.endswith('.html'):
             creatHTML(self.fileName)      
-        if self.fileName.endswith('.py'):
+        elif self.fileName.endswith('.py'):
             creatPYTHON(self.fileName)
         else:
             createFile(" ", self.fileName)
@@ -41,8 +41,9 @@ class commands:
             for _ in self.files:
                 remove(_)
     def execute(self) -> None:
-        if len(argv) == 1:  
-            doc()
+        if '--version' in argv:
+            print(v)
+            exit()
         if '--touch' in argv:
             if len(argv) == 3:
                 self.fileName = argv[2]
@@ -61,6 +62,8 @@ class commands:
             elif len(argv) > 3:
                 self.files = argv[2::]
             self.delete()
+        else:
+            doc()
     def __repr__(self) -> str:
         return '<commands/>' 
 

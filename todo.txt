@@ -1,6 +1,6 @@
 to do list:
-    ==> the installer
+    ==> the installer (done)
     ==> the logo
-    ==> the documentation
-    ==> the official release
+    ==> the documentation (semi done)
+    ==> the official release 
 I am so fucking excited.

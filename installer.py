@@ -14,7 +14,7 @@ from tkinter import StringVar, Tk, Label, Button
 from tkinter.constants import HORIZONTAL
 from tkinter.ttk import *
 from time import sleep
-from os import path, getcwd
+from os import path, getcwd, mkdir
 from os import system
 from shutil import copy
 
@@ -39,20 +39,22 @@ class installer(Tk):
                 if self.myPrg['value'] == 50:
                     cDrive = getcwd().split('\\')[0] + '\\'
                     if not path.exists(cDrive + "Program Files"):
-                        print('not there')
+                        moodir = cDrive + "Program Files" + "moo"
+                        mkdir(moodir)
                     else:
-                        print('there nigga') 
+                        pass
+                    copy(getcwd() + "dist\\moo", moodir)
                 self.lbl['text'] = '   Updating the user variables...'
                 self.update_idletasks()
             self.update_idletasks()
-        
+        system("setX PATH \"C:\\Program Files\\moo;%PATH%\"")
         for i in self.components:
             i.destroy()
         self.geometry("700x70")
         self.lbl = Label(self, text='Installed successfully!! run the command moo in the terminal to test',font='Helvetica')
         self.lbl.pack(pady=10, ipadx=13, ipady=5)
     def prog(self):
-        self.myPrg = Progressbar(self, orient=HORIZONTAL, length=300, mode="determinate")
+        self.myPrg = Progressbar(self, orient=HORIZONTAL, length=300, mode="determinate", bg="blue")
         self.myPrg.pack(padx=10, pady=10)
         self.appendComponent(self.myPrg)
         self.lbl = Label(self, text='   installing the command...  ',font='Helvetica')

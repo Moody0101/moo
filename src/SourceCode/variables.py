@@ -11,23 +11,7 @@ documentation: str = """
     description:
     command line tool that clones the linux commands like touch, cat, and can delete a
     file or multiple files.
-    
-
-    flags: 
-        --touch ==> create files with one touch.
-        Example:
-            moo --touch main.py ==> creates a file called main.py
-            but if you want to make more than one file, then use this command
-            moo --touch main.py main.js main.c main.html ==> creates more than one file with the specified names
-        
-        --cat ==> checking the content of a file.
-        Example:
-            moo --cat main.py ==> displays the content of the main.py 
-        --delete ==> delete any file in any directory
-        Example:
-            moo --delete main.py ==> deletes the main.py file
-            note ==> (it does not delete dirs)
-            moo --delete main.py main.js ==> deletes every specified file.
+   
 """
 # starter code 
 
@@ -67,4 +51,27 @@ def main():
 if __name__ == '__main__':
     main()
 
+"""
+
+TouchDoc: str = """
+touch ==> create files with one touch.
+        Example:
+            touch main.py ==> creates a file called main.py
+            but if you want to make more than one file, then use this command
+            touch main.py main.js main.c main.html ==> creates more than one file with the specified names
+        
+"""
+
+DelDoc : str = """
+del ==> delete any file in any directory
+        Example:
+            del main.py ==> deletes the main.py file
+            note ==> (it does not delete dirs)
+            del main.py main.js ==> deletes every specified file.
+"""
+
+CatDoc: str = """
+cat ==> checking the content of a file.
+        Example:
+            cat main.py ==> displays the content of the main.py 
 """

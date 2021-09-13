@@ -52,7 +52,13 @@ if __name__ == '__main__':
     main()
 
 """
-
+CPP: str = """
+#include <iostream>
+using namespace std;
+int main() {
+\treturn 0;
+}
+"""
 TouchDoc: str = """
 touch ==> create files with one touch.
         Example:
@@ -62,12 +68,13 @@ touch ==> create files with one touch.
         
 """
 
-DelDoc : str = """
-del ==> delete any file in any directory
+remDoc : str = """
+rem ==> delete any file in any directory
         Example:
-            del main.py ==> deletes the main.py file
+            rem main.py ==> deletes the main.py file
             note ==> (it does not delete dirs)
-            del main.py main.js ==> deletes every specified file.
+            rem main.py main.js ==> deletes every specified file.
+    rem(remove file)
 """
 
 CatDoc: str = """
@@ -75,3 +82,4 @@ cat ==> checking the content of a file.
         Example:
             cat main.py ==> displays the content of the main.py 
 """
+

@@ -1,5 +1,5 @@
 from os import mkdir, path
-from funcs import createFile, creatHTML, creatPYTHON
+from funcs import createFile, creatHTML, creatPYTHON, creatCPP
 from sys import argv
 from variables import TouchDoc, v
 class touch:
@@ -20,6 +20,8 @@ class touch:
             creatHTML(self.file) 
         elif self.file.endswith('.py'):
             creatPYTHON(self.file)
+        elif self.file.endswith('.cpp'):
+            creatCPP(self.file)
         else:
             createFile(" ", self.file)
             

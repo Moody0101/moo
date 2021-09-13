@@ -3,4 +3,3 @@ to do list:
     ==> the logo
     ==> the documentation (semi done)
     ==> the official release 
-I am so fucking excited.

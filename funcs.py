@@ -1,5 +1,5 @@
 
-from variables import PYTHON, HTML, documentation
+from variables import PYTHON, HTML, documentation, CPP
 
 
 def doc():
@@ -16,3 +16,6 @@ def creatHTML(fileName):
 
 def creatPYTHON(fileName):
     createFile(PYTHON, fileName)
+
+def creatCPP(fileName):
+    createFile(CPP, fileName)

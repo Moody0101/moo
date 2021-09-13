@@ -1,5 +1,5 @@
 from os import remove
-from variables import v, DelDoc
+from variables import v, remDoc
 from sys import argv
 
 class delete:
@@ -14,19 +14,19 @@ class delete:
                 remove(_)
     def execute(self) -> None:
         if len(argv) == 1:
-            print(DelDoc)
+            print(remDoc)
         elif len(argv) == 2:
             if '-v' in argv:
                 print(v)
             elif '-h' in argv:
-                print(f"Help : \n {DelDoc}")
+                print(f"Help : \n {remDoc}")
             else:
                 self.file = argv[1]
         elif len(argv) > 3:
             self.files = argv[1::]
         self.delete()
     def __repr__(self) -> str:
-        return '<Command: delete>'
+        return '<Command: rem>'
 
 
 

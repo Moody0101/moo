@@ -83,3 +83,14 @@ cat ==> checking the content of a file.
             cat main.py ==> displays the content of the main.py 
 """
 
+compilecDoc: str = """
+
+compile ==> a loop compiling a c++/c script every 5s.
+    example:
+    compile <compiler> <fileName>
+    for c: compile gcc <fileName>
+    for c++: compile g++ <fileName>
+
+additional Note: if the name of the file is Hello.c or hello.cpp,
+it will compile it into a hello.exe anyways.
+"""

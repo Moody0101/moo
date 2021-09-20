@@ -1,6 +1,6 @@
 from sys import argv
 from time import sleep
-from os import system
+from os import system, path
 from variables import compilecDoc, v
 
 class compile:
@@ -10,7 +10,7 @@ class compile:
         self.validExt = ["cpp", "c"]
         self.compilers = ["gcc -o", "g++ -o"]
     def comp(self):
-        co = True
+        co = path.isfile(self.fileName)
         if self.ext == "cpp":
             while co:
                 system(
@@ -18,6 +18,8 @@ class compile:
                         )
                 print(f"compiling to {self.fileNam.split('.')[0]}...")
                 sleep(3)
+            else:
+                 print(f'the file {self.fileName} does not exist')
         else:
             while co:
                 system(
@@ -25,6 +27,8 @@ class compile:
                      )
                 print(f"compiling to {self.fileName.split('.')[0]}")
                 sleep(3)
+            else:
+                print(f'the file {self.fileName} does not exist')
     def checkExt(self):
         self.ext = self.fileName.split('.')[1]
         if self.ext not in self.validExt:

@@ -1,6 +1,7 @@
-move.py
+
 *.spec
 ./dist
 ./build
 install.py
-
+produce.py
+*.json

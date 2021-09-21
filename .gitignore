@@ -1,0 +1,6 @@
+move.py
+*.spec
+./dist
+./build
+install.py
+

@@ -11,13 +11,18 @@ class compile:
         self.compilers = ["gcc -o", "g++ -o"]
     def comp(self):
         co = path.isfile(self.fileName)
+        dot = '.'
         if self.ext == "cpp":
             while co:
                 system(
                         f"{self.compilers[1]} {self.fileName.split('.')[0]} {self.fileName}"
                         )
-                print(f"compiling to {self.fileNam.split('.')[0]}...")
-                sleep(3)
+                print(f"compiling to {self.fileNam.split('.')[0]} you can edit now{dot}", end='\r')
+                if len(dot) <= 3:
+                    dot += '.'
+                elif len(dot) > 3:
+                    dot = '.'
+                sleep(0.5)
             else:
                  print(f'the file {self.fileName} does not exist')
         else:
@@ -25,8 +30,12 @@ class compile:
                 system(
                             f"{self.compilers[0]} {self.fileName.split('.')[0]} {self.fileName}"
                      )
-                print(f"compiling to {self.fileName.split('.')[0]}")
-                sleep(3)
+                print(f"compiling to {self.fileName.split('.')[0]} you can edit now{dot}", end='\r')
+                if len(dot) <= 3:
+                    dot += '.'
+                elif len(dot) > 3:
+                    dot = '.'
+                sleep(0.5)
             else:
                 print(f'the file {self.fileName} does not exist')
     def checkExt(self):

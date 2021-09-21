@@ -1,5 +1,0 @@
-to do list:
-    ==> the installer (done)
-    ==> the logo
-    ==> the documentation (semi done)
-    ==> the official release 

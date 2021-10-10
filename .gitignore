@@ -4,4 +4,6 @@
 ./build
 install.py
 produce.py
+wrk.py
+*.exe
 *.json

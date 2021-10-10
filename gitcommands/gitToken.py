@@ -17,7 +17,6 @@ if you want to store a token then pass these args:
     gitToken --store <token> <expirationDate>
     ex: gitToken --store hdihgstzfqjdvdgvswbzau687865678 "sunday dec, 22 2021"
     Note: you better type the date inside quotation marks.
-
 """
 
 

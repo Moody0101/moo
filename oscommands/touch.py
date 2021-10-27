@@ -7,15 +7,9 @@ class touch:
     def __init__(self, files: list[str] = None, file:str = None) -> None:
         self.file = file
         self.files = files
-    def writeFile(self): # this function make the file and if it is a path for a dir, it checks if there is and identical dir, if there is not it makes it.
-        if '\\' in self.file:
-            dir = self.file.split('\\')[0] # dir name
-            if not path.exists(dir):
-                mkdir(dir)
-        if '/' in self.file:
-            dir = self.file.split('/')[0] # dir Name
-            if not path.exists(dir):
-                mkdir(dir)
+    def __repr__(self) -> str:
+        return '<Command: touch>'
+    def writeFile(self):
         if self.file.endswith('.html'):
             creatHTML(self.file) 
         elif self.file.endswith('.py'):
@@ -25,7 +19,7 @@ class touch:
         else:
             createFile(" ", self.file)
             
-    def touch0(self) -> None:
+    def touch0(self) -> int:
         """
         passing attribs to the writefile function
         """
@@ -35,27 +29,30 @@ class touch:
             for _ in self.files:
                 self.file = str(_)
                 self.writeFile()
+        return 0
     def execute(self):
         """
         this method makes decisions based on argvs.
         """
         if len(argv) == 1:
             print(TouchDoc)
+            return
         if '-v' in argv:
             print(v)
+            return
         elif len(argv) == 2 and '-v' not in argv:
             self.file = argv[1]
-            self.touch0()
+
         elif len(argv) > 2:
             self.files = argv[1:]
         else:
             print(TouchDoc)
-    def __repr__(self) -> str:
-        return '<Command: touch>'
+            return
+        self.touch0()
+   
 
 
-touch101 = touch() # Making the touch object
+touch101 = touch() 
 if __name__ == '__main__':
     touch101.execute()
-    
 

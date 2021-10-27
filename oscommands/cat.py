@@ -1,15 +1,14 @@
 from sys import argv
 from variables import CatDoc, v
+from fileinput import input
 class Cat:
     def __init__(self, file: str = None, files: list[str] = None) -> None:
         self.file = file
         self.files = files
     
     def cat(self) -> None:
-        content = open(self.file, 'r').read()
-        print(f"""
-    {content}
-    """)
+        for line in input(self.file):
+            print(line)
     def execute(self):
         if len(argv) == 2:
             if '-v' in argv:

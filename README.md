@@ -1,5 +1,5 @@
 
-<img src="./logo.svg" style="width: 100px; margin: 10px auto">
+<img src="logo.svg" style="width: 100px; margin: 10px auto">
 
 ## description
 > usefull scripts for windows users

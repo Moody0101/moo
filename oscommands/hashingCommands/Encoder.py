@@ -1,7 +1,7 @@
 
 from base64 import (b64encode, b64decode, b32encode, b32decode, b16encode, b16decode, b85encode, b85decode)
 from os import path
-from sys import argv
+from sys import argv, exit
 
 class Encoder:
     """
@@ -19,24 +19,29 @@ class Encoder:
         "BASE85": [b85encode, b85decode]
         }
         self.e, self.d = 0, 1
-        self.setUp()
+        try:
+            self.setUp()
+        except:
+            exit()
+
     def setUp(self):
 
         if len(argv) == 1:
             print("""
-    usage: Encode <text> --base [base] -e/-d
+    usage: Encode <text> --base [base] -e/-d --file 
     --base: base32 for example 
     --e: encode
     --d: decode
+    --file: adding the flag makes <text> a fileName that has the text to be processed
         """)
-            exit(0)
+            exit()
         elif len(argv) == 2 or len(argv) == 3:
             print("the base is not specified! try: Encoding <text> --base base64")
-            exit(0)
+            exit()
         elif len(argv) == 4: 
             if str(argv[3]).upper().strip() not in list(self.available.keys()):
                 print(f"{argv[3]} is not available")
-                exit(0)
+                exit()
             else:
                 self.string = argv[1]
                 self.algo = self.available[str(argv[3]).upper().strip()]
@@ -50,7 +55,7 @@ class Encoder:
     --e: encode
     --d: decode
         """)
-                exit(0)
+                exit()
             else:
                 self.string = argv[1]
                 self.algo = self.available[str(argv[3]).upper().strip()]
@@ -67,7 +72,7 @@ class Encoder:
         if self.EncodeFile:
             if not path.exists(self.string):
                 print(f"this file => {self.string} does not exist")
-                exit(0)
+                exit()
             with open(self.string) as f:
                 print("Working on processing...")
                 text = f.read().encode()
@@ -85,4 +90,4 @@ class Encoder:
                 print(self.algo[self.e](self.string.encode()).decode("utf-8"))
 
 if __name__ == '__main__':
-    Encoder()
+    en = Encoder()

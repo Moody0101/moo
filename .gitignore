@@ -1,9 +1,9 @@
 
 *.spec
-./dist
-./build
-install.py
+dist
+build
 produce.py
 wrk.py
 *.exe
 *.json
+*.txt

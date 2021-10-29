@@ -1,9 +1,10 @@
 
-<img src="logo.svg" style="width: 100px; margin: 10px auto">
 
 ## description
 > usefull scripts for windows users
+
 ## usage
+
 firstly you need to make a directory that will host the commands an env var
 then when you want to install any command you can use it this way:
 

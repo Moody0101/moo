@@ -1,8 +1,10 @@
+
 from shutil import copy
 from os import system, remove, path, environ, scandir, mkdir
 from time import sleep
 from sys import argv, exit
 from itertools import chain
+
 class mooInstaller:
     def __init__(self):
         self.dirs = ["./oscommands", "./gitcommands", "./oscommands/hashingCommands"]
